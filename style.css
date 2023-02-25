@@ -79,7 +79,7 @@ body {
   padding: .5rem;
   border-radius: .5rem;
   border: none;
-  background-color: rgb(242, 227, 199);
+  background-color: rgba(249, 249, 188, 0.779);
   box-shadow: 0 0 5px 3px rgba(255, 255, 255, 0.865);
   text-align: center;
   width: 32%;
@@ -101,6 +101,7 @@ body {
   margin: 0 auto;
   border-radius: .5rem;
   padding: .1rem;
+  margin-bottom: 2rem;
 }
 
 .guess-history > h4 {
