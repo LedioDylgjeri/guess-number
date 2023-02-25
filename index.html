@@ -24,17 +24,18 @@
         <p>High Score:</p>
       </div>
       <div class="btn-div">
-        <button class="rst-btn">Reset</button>
+        <button class="rst-btn" class="reset-button" type="reset">Reset</button>
       </div>
     </div>
     <div class="input-div">
       <img class="game-img" src="./images/OBFINX0.jpg" alt="game-img">
-      <input type="number" id="" placeholder="Enter you number" value="" min="1" max="100">
-      <button class="check-btn">Check</button>
-      <p class="outcome-p">Your Guess is too low</p>
+      <input type="number" id="guess-input" placeholder="Enter you number" value="" min="1" max="100">
+      <button class="check-btn" id="guess-button" type="submit">Check</button>
+      <p class="message">Please enter a guess between 1 and 100!</p>
     </div>
     <div class="guess-history">
-      <h4>Guess History</h4>
+      <h4 id="prev-guesses-msg">Guess History</h4>
+      <div id="prev-guesses"></div>
     </div>
   </div>
 </body>
