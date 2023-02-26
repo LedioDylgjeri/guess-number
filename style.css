@@ -18,7 +18,7 @@ body {
   }
 
 .heading-h4 {
-  margin-top: -2%;
+  margin-top: -20px;
 }
 
 .container {
@@ -29,7 +29,7 @@ body {
   background-color: rgba(249, 249, 188, 0.779);
 }
 
-.score-btn {
+#score-btn {
   padding: 0 1rem;
   display: flex;
   justify-content: space-between;
@@ -94,6 +94,70 @@ body {
   width: 35%;
 }
 
+#winner-div {
+  border-radius: 1rem;
+  background-color: rgba(21, 232, 141, 0.262);
+  width: 80%;
+  margin: 1rem auto;
+  padding: .5rem;
+  text-align: center;
+}
+
+.you-win-container {
+  border: 2px solid black;
+  width: 5rem;
+  height: 5rem;
+  margin: 1rem auto;
+  border-radius: 6px;
+  background-color: #a7faf7aa;
+}
+
+.you-win{
+  margin: 8% auto;
+  border: 2px solid black;
+  background-color: rgba(255, 0, 0, 0.809);
+  height: 4rem;
+  width: 4rem;
+  text-align: center;
+}
+
+.you-win > h3 {
+  margin-top: 17%;
+  font-weight: bolder;
+}
+
+#lose-div {
+  border-radius: 1rem;
+  background-color: rgba(211, 121, 19, 0.507);
+  width: 80%;
+  margin: 1rem auto;
+  padding: .5rem;
+  text-align: center;
+}
+
+.you-lose-container {
+  border: 2px solid black;
+  width: 5rem;
+  height: 5rem;
+  margin: 1rem auto;
+  border-radius: 6px;
+  background-color: #dd75f172;
+}
+
+.you-lose {
+  margin: 8% auto;
+  border: 2px solid black;
+  background-color: rgba(218, 165, 32, 0.921);
+  height: 4rem;
+  width: 4rem;
+  text-align: center;
+}
+
+.you-lose > h3 {
+  margin-top: 17%;
+  font-weight: bolder;
+}
+
 .guess-history {
   text-align: center;
   background-color: rgba(81, 240, 240, 0.743);
@@ -109,3 +173,4 @@ body {
   width: 50%;
   margin: 1rem auto;
 }
+
