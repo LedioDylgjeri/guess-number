@@ -27,12 +27,12 @@ loseDiv.setAttribute('hidden', true)
 let secretNum = Math.floor(Math.random() * 100 + 1); 
 console.log(secretNum);
 let guessList = [''];
-let guess = guessInput.value 
 
 // ----------------- Event Listener / Functions -----------------------
 
 
 chckBtn.addEventListener('click', function(){
+  let guess = guessInput.value 
   if(isNaN(guess) || guess < 0 || guess > 100){
     inputMsg.innerText = 'Please enter number 1 to 100 and check'
   } 
@@ -45,10 +45,12 @@ chckBtn.addEventListener('click', function(){
     inputMsg.innerText = 'Go lower'
     guessList.push(guess)
     showGuess.innerText = guessList
+    console.log(guessList);
   } else if(guess < secretNum) {
     inputMsg.innerText = 'Go higher'
     guessList.push(guess)
     showGuess.innerText = guessList
+    console.log(guessList);
   } 
   showScore()
 })
@@ -63,6 +65,6 @@ function showScore(){
       loseDiv.removeAttribute('hidden')
     }
   }
-  console.log(guessList.length - 1);
+  // console.log(guessList.length - 1);
 }
 
