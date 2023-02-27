@@ -21,7 +21,6 @@ tryAgainBtn = document.querySelector('#try-again')
 inputDiv.removeAttribute('hidden')
 winDiv.setAttribute('hidden', true)
 loseDiv.setAttribute('hidden', true)
-// console.log(tryAgainBtn);
 
 // ------------------- Variables -------------------
 
