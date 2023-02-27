@@ -57,6 +57,16 @@ body {
   border: none;
 }
 
+.rst-btn:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 3px rgb(236, 63, 245);
+  background-color: rgba(189, 94, 234, 0.714);
+  font-size: 1rem;
+  color: white;
+  font-weight: bolder;
+  transition: ease-in-out .4s;
+}
+
 .input-div {
   border-radius: 1rem;
   background-color: rgba(211, 121, 19, 0.507);
@@ -92,6 +102,16 @@ body {
   color: white;
   border-radius: .7rem;
   width: 35%;
+}
+
+.check-btn:hover {
+  cursor: pointer;
+  box-shadow: 0 0 2px 3px rgba(255, 255, 255, 0.462);
+  background-color: rgba(150, 9, 238, 0.552);
+  font-size: 1rem;
+  color: white;
+  font-weight: bolder;
+  transition: ease-in-out .4s;
 }
 
 #winner-div {
