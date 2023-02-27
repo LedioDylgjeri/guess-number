@@ -41,6 +41,10 @@ chckBtn.addEventListener('click', function(){
   if(isNaN(guess) || guess < 0 || guess > 100){
     inputMsg.innerText = 'Please enter number 1 to 100 and check'
   } 
+  else if(guessList.includes(guess)) {
+    inputMsg.innerText = 'You already guessed this number'
+    inputMsg.style.color = 'crimson'
+  }
   else if(guess == secretNum){
     scrDiv.setAttribute('hidden', true)
     rstBtnDiv.setAttribute('hidden', true)
@@ -48,17 +52,22 @@ chckBtn.addEventListener('click', function(){
     winDiv.removeAttribute('hidden')
     winMsgP.innerText = `Your guess was correct. ${guess} is my secret number.`
     confetti.start(2000)
-  } else if(guess > secretNum){
+  } 
+  else if(guess > secretNum){
     inputMsg.innerText = `${guess} is too high, try another number`
+    inputMsg.style.color = 'navy'
     guessList.push(guess)
     showGuess.innerText = guessList.join(' ')
-  } else if(guess < secretNum) {
+  } 
+  else if(guess < secretNum) {
     inputMsg.innerText = `${guess} is too low, try another number`
+    inputMsg.style.color = 'indigo'
     guessList.push(guess)
     showGuess.innerText = guessList.join(' ')
   } 
   showScore()
 })
+
 
 let previousScore;
 

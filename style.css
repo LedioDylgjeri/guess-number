@@ -43,9 +43,21 @@ body {
   border-radius: 1rem;
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 1060px) {
+  .score {
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 690px) {
   .score {
     width: 40%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .score {
+    width: 50%;
   }
 }
 
