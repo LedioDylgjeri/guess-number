@@ -98,7 +98,7 @@ body {
   border-radius: 1rem;
   background-color: rgba(21, 232, 141, 0.262);
   width: 80%;
-  margin: 1rem auto;
+  margin: 6rem auto;
   padding: .5rem;
   text-align: center;
 }
@@ -139,9 +139,11 @@ body {
   border: 2px solid black;
   width: 5rem;
   height: 5rem;
-  margin: 1rem auto;
+  margin: 6rem auto;
   border-radius: 6px;
   background-color: #dd75f172;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 .you-lose {
@@ -153,9 +155,13 @@ body {
   text-align: center;
 }
 
-.you-lose > h3 {
+.you-lose > .game-over {
   margin-top: 17%;
   font-weight: bolder;
+}
+
+.you-lose > .sorry {
+  margin-top: -10rem;
 }
 
 .guess-history {

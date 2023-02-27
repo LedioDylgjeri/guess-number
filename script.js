@@ -2,6 +2,7 @@
 // ------------------- Cached Element References -------------------
 scrDiv = document.querySelector('.score')
 rstBtnDiv = document.querySelector('.btn-div')
+rstBtn = document.querySelector('.reset-button')
 scrLog = document.querySelector('.show-score')
 highScrLog = document.querySelector('.high-score')
 inputDiv = document.querySelector('.input-div')
@@ -10,7 +11,7 @@ chckBtn = document.querySelector('#guess-button')
 inputMsg = document.querySelector('.message')
 winDiv = document.querySelector('#winner-div')
 winMsgP = document.querySelector('.winner-msgP')
-winHeading = document.querySelector('.winner-msgh3')
+winScrShow = document.querySelector('.winner-msgh3')
 winScr = document.querySelector('.winner-msgS')
 playAgainBtn = document.querySelector('#play-again')
 loseDiv = document.querySelector('#lose-div')
@@ -30,9 +31,13 @@ let guessList = [''];
 
 // ----------------- Event Listener / Functions -----------------------
 
+playAgainBtn.addEventListener('click', playAgain)
+rstBtn.addEventListener('click', reset)
+tryAgainBtn.addEventListener('click', reset)
+
 
 chckBtn.addEventListener('click', function(){
-  let guess = guessInput.value 
+  let guess = guessInput.value
   if(isNaN(guess) || guess < 0 || guess > 100){
     inputMsg.innerText = 'Please enter number 1 to 100 and check'
   } 
@@ -41,30 +46,66 @@ chckBtn.addEventListener('click', function(){
     rstBtnDiv.setAttribute('hidden', true)
     inputDiv.setAttribute('hidden', true)
     winDiv.removeAttribute('hidden')
+    winMsgP.innerText = `Your guess was correct. ${guess} is my secret number.`
   } else if(guess > secretNum){
-    inputMsg.innerText = 'Go lower'
+    inputMsg.innerText = `${guess} is too high, try another number`
     guessList.push(guess)
-    showGuess.innerText = guessList
-    console.log(guessList);
+    showGuess.innerText = guessList.join(' ')
   } else if(guess < secretNum) {
-    inputMsg.innerText = 'Go higher'
+    inputMsg.innerText = `${guess} is too low, try another number`
     guessList.push(guess)
-    showGuess.innerText = guessList
-    console.log(guessList);
+    showGuess.innerText = guessList.join(' ')
   } 
   showScore()
 })
 
+let previousScore;
+
 function showScore(){
   for(let i = 0; i < guessList.length; i++ ){
-    scrLog.innerText = `Score: ${i}`
+    scrLog.innerText = `Attempts: ${i}`
+    highScrLog.innerText = `Lowest Attempts: ${i}`
+    winScrShow.innerText = `Your Attempts: ${i}`
+    winScr.innerText = `Best: ${i}`
+    previousScore = i
     if(i === 11){
       scrDiv.setAttribute('hidden', true)
       rstBtnDiv.setAttribute('hidden', true)
       inputDiv.setAttribute('hidden', true)
       loseDiv.removeAttribute('hidden')
+      loseMsg.innerText = `My number was: ${secretNum}`
     }
-  }
-  // console.log(guessList.length - 1);
+  } 
 }
 
+function playAgain(){
+  secretNum = Math.floor(Math.random() * 100 + 1)
+  console.log(secretNum);
+  guessList = [''];
+  scrLog.innerText = `Attempts: `
+  highScrLog.innerText = `High Score: ${previousScore}`
+  guessInput.value = ''
+  showGuess.innerText = ''
+  inputMsg.innerText = `Try your luck again. Remember, pick a number between 1 and 100`
+  scrDiv.removeAttribute('hidden')
+  rstBtnDiv.removeAttribute('hidden')
+  inputDiv.removeAttribute('hidden')
+  winDiv.setAttribute('hidden', false)
+  loseDiv.setAttribute('hidden', false)
+}
+
+function reset(){
+  secretNum = Math.floor(Math.random() * 100 + 1)
+  console.log(secretNum);
+  guessList = [''];
+  scrLog.innerText = `Attempts: `
+  highScrLog.innerText = `High Score: `
+  guessInput.value = ''
+  showGuess.innerText = ''
+  inputMsg.innerText = `Enter a number between 1 and 100!`
+  scrDiv.removeAttribute('hidden')
+  rstBtnDiv.removeAttribute('hidden')
+  inputDiv.removeAttribute('hidden')
+  winDiv.setAttribute('hidden', false)
+  loseDiv.setAttribute('hidden', false)
+}

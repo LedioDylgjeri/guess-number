@@ -21,8 +21,8 @@
   <div class="container">
     <div id="score-btn">
       <div class="score">
-        <p class="show-score">Score:</p>
-        <p class="high-score">High Score:</p>
+        <p class="show-score">Attempts:</p>
+        <p class="high-score">Lowest Attempts:</p>
       </div>
       <div class="btn-div">
         <button class="rst-btn reset-button" type="reset">Reset</button>
@@ -32,7 +32,7 @@
       <img class="game-img" src="./images/OBFINX0.jpg" alt="game-img">
       <input type="text" id="guess-input" placeholder="Enter you number">
       <button class="check-btn" id="guess-button">Check</button>
-      <p class="message">Enter your number and check!</p>
+      <p class="message">Enter a number between 1 and 100!</p>
     </div>
     <div hidden id="winner-div">
       <div class="you-win-container">
@@ -49,10 +49,10 @@
     <div id="lose-div">
       <div class="you-lose-container">
         <div class="you-lose">
-          <h3>GAME OVER</h3>
+          <h3 class="game-over">GAME OVER</h3>
         </div>
       </div>
-      <h3 class="animate__zoomInUp">Sorry, you did not find the number</h3>
+      <h3 class="animate__zoomInUp sorry">Sorry, you did not find the number</h3>
       <p>Dont't give up and Try Again</p>
       <p class="lose-msg"></p>
       <button id="try-again" class="check-btn">Try Again</button>
