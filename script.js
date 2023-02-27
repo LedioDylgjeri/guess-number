@@ -96,6 +96,7 @@ function playAgain(){
   guessInput.value = ''
   showGuess.innerText = ''
   inputMsg.innerText = `Try your luck again. Remember, pick a number between 1 and 100`
+  inputMsg.style.color = 'black'
   scrDiv.removeAttribute('hidden')
   rstBtnDiv.removeAttribute('hidden')
   inputDiv.removeAttribute('hidden')
@@ -112,6 +113,7 @@ function reset(){
   guessInput.value = ''
   showGuess.innerText = ''
   inputMsg.innerText = `Enter a number between 1 and 100!`
+  inputMsg.style.color = 'black'
   scrDiv.removeAttribute('hidden')
   rstBtnDiv.removeAttribute('hidden')
   inputDiv.removeAttribute('hidden')
