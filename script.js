@@ -47,6 +47,7 @@ chckBtn.addEventListener('click', function(){
     inputDiv.setAttribute('hidden', true)
     winDiv.removeAttribute('hidden')
     winMsgP.innerText = `Your guess was correct. ${guess} is my secret number.`
+    confetti.start(2000)
   } else if(guess > secretNum){
     inputMsg.innerText = `${guess} is too high, try another number`
     guessList.push(guess)
