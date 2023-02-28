@@ -25,7 +25,6 @@ loseDiv.setAttribute('hidden', true)
 // ------------------- Variables -------------------
 
 let secretNum = Math.floor(Math.random() * 100 + 1); 
-console.log(secretNum);
 let guessList = [''];
 
 // ----------------- Event Listener / Functions -----------------------
@@ -89,7 +88,6 @@ function showScore(){
 
 function playAgain(){
   secretNum = Math.floor(Math.random() * 100 + 1)
-  console.log(secretNum);
   guessList = [''];
   scrLog.innerText = `Attempts: `
   highScrLog.innerText = `High Score: ${previousScore}`
@@ -106,7 +104,6 @@ function playAgain(){
 
 function reset(){
   secretNum = Math.floor(Math.random() * 100 + 1)
-  console.log(secretNum);
   guessList = [''];
   scrLog.innerText = `Attempts: `
   highScrLog.innerText = `High Score: `
